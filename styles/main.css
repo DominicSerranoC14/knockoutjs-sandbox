@@ -8,3 +8,6 @@
   padding: 1rem; }
   .container div, .container button, .container input {
     margin: .5rem 0; }
+  .container select {
+    display: inline-block;
+    height: 50%; }
