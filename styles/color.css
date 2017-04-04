@@ -1599,35 +1599,3 @@
 
 .transparent-text {
   color: transparent !important; }
-
-.parent-container-objects {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-
-.container-main {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: none;
-  justify-content: none;
-  width: 40%;
-  margin: 1rem auto;
-  text-align: center;
-  border: solid 1px black;
-  padding: 1rem; }
-  .container-main div, .container-main button, .container-main input {
-    margin: .5rem 0; }
-  .container-main select {
-    display: inline-block;
-    height: 10rem; }
-  .container-main h4 {
-    text-shadow: 1px 1px 2px black; }
