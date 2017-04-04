@@ -7,47 +7,45 @@
 
 <body>
 
-  <!-- observable  -->
-  <!-- <div class="container">
+  <!-- observable objects -->
+  <div class="container">
     <div>One way data binding</div>
-    <div data-bind="text:firstName"></div>
-    <div data-bind="text:lastName"></div>
-    <div data-bind="text:fullName(firstName, lastName)"></div>
-  </div> -->
+    <div data-bind="text:myComputed.firstName"></div>
+    <div data-bind="text:myComputed.lastName"></div>
+    <div data-bind="text:myComputed.fullName(myComputed.firstName, myComputed.lastName)"></div>
+  </div>
 
-  <!-- <div class="container">
+  <div class="container">
     <div>Two way data binding with observables</div>
-    <input data-bind="value:firstName, valueUpdate:'afterkeydown'" />
-    <div data-bind="text:firstName"></div>
-  </div> -->
+    <input data-bind="value:myComputed.firstName, valueUpdate:'afterkeydown'" />
+    <div data-bind="text:myComputed.firstName"></div>
+  </div>
 
-  <!-- <div class="container">
+  <div class="container">
     <div>Two way data binding with computed observables</div>
-    <input data-bind="value:firstName, valueUpdate:'afterkeydown'" />
-    <input data-bind="value:lastName, valueUpdate:'afterkeydown'" />
-    <input data-bind="value:fullName, valueUpdate:'afterkeydown'" />
-  </div> -->
+    <input data-bind="value:myComputed.firstName, valueUpdate:'afterkeydown'" />
+    <input data-bind="value:myComputed.lastName, valueUpdate:'afterkeydown'" />
+    <input data-bind="value:myComputed.fullNameComputed, valueUpdate:'afterkeydown'" />
+  </div>
 
 
   <!--  Observable Arrays  -->
   <div class="container">
-    <div data-bind="text:`Total products: ${products().length}`"></div>
-    <select data-bind="options:products, selectedOptions:selectedProducts, optionsText:'description'" multiple="true"></select>
-    <button data-bind="click:removeSelected, enable:productsAreSelected">
+    <div data-bind="text:`Total products: ${arrayVM.products().length}`"></div>
+    <select data-bind="options:arrayVM.products, selectedOptions:arrayVM.selectedProducts, optionsText:'description'" multiple="true"></select>
+    <button data-bind="click:arrayVM.removeSelected, enable:arrayVM.productsAreSelected">
       Remove
     </button>
-    <button data-bind="click:sortProducts, enable:productsExist">
+    <button data-bind="click:arrayVM.sortProducts, enable:arrayVM.productsExist">
       Sort
     </button>
     <div>Add item:</div>
-    <input type="text" data-bind="value:itemToAdd, valueUpdate:'afterkeydown'" />
-    <button data-bind="click:addItem, enable:itemToAdd().length > 0">Add</button>
+    <input type="text" data-bind="value:arrayVM.itemToAdd, valueUpdate:'afterkeydown'" />
+    <button data-bind="click:arrayVM.addItem, enable:arrayVM.itemToAdd().length > 0">Add</button>
   </div>
 
 
-  <!-- <script src="bower_components/knockout/dist/knockout.js"></script> -->
-  <script src="node_modules/knockout/build/output/knockout-latest.js"></script>
-  <script src="main.js"></script>
-  <script src="arrayObs.js"></script>
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script data-main="scripts/main.js" src="scripts/require.js"></script>
 </body>
 </html>
