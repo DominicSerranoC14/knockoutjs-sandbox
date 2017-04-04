@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <link href="styles/materialize.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="nav">
+    <a href="/">Objects</a>
+    <a href="/arrays.html">Arrays</a>
+  </div>
+
+
+  <!--  Observable Arrays  -->
+  <div class="container">
+    <div data-bind="text:`Total products: ${arrayVM.products().length}`"></div>
+    <select data-bind="options:arrayVM.products, selectedOptions:arrayVM.selectedProducts, optionsText:'description'" multiple="true"></select>
+    <button class="btn" data-bind="click:arrayVM.removeSelected, enable:arrayVM.productsAreSelected">
+      Remove
+    </button>
+    <button class="btn" data-bind="click:arrayVM.sortProducts, enable:arrayVM.productsExist">
+      Sort
+    </button>
+    <div>Add item:</div>
+    <input type="text" data-bind="value:arrayVM.itemToAdd, valueUpdate:'afterkeydown'" />
+    <button class="btn" data-bind="click:arrayVM.addItem, enable:arrayVM.itemToAdd().length > 0">Add</button>
+  </div>
+
+
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.js"></script>
+  <script data-main="scripts/main.js" src="scripts/require.js"></script>
+</body>
+</html>
