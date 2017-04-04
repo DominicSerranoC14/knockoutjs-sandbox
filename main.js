@@ -49,4 +49,4 @@ const myComputed = genViewModel(data);
 
 
 // Apply view model to the view
-ko.applyBindings(myComputed);
+// ko.applyBindings(myComputed);
