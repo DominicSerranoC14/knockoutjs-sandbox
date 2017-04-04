@@ -8,15 +8,19 @@
 
 <body>
 
-  <div class="nav">
-    <a href="/">Objects</a>
-    <a href="/arrays.html">Arrays</a>
-  </div>
+  <nav class="nav my-blue">
+    <div class="nav-wrapper">
+      <ul class="right">
+        <li><a href="/">Objects</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+      </ul>
+    </div>
+  </nav>
 
 
   <!--  Observable Arrays  -->
-  <div class="container">
-    <div data-bind="text:`Total products: ${arrayVM.products().length}`"></div>
+  <div class="container-main">
+    <h5 data-bind="text:`Total products: ${arrayVM.products().length}`"></h5>
     <select data-bind="options:arrayVM.products, selectedOptions:arrayVM.selectedProducts, optionsText:'description'" multiple="true"></select>
     <button class="btn" data-bind="click:arrayVM.removeSelected, enable:arrayVM.productsAreSelected">
       Remove
