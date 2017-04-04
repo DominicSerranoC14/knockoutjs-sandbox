@@ -49,6 +49,7 @@ define(['helper'], ({ kob }) => {
   // });
 
 
-  return { myComputed }
+  // Export myComputed
+  return myComputed;
 
 });

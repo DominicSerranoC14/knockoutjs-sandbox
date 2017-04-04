@@ -5,9 +5,6 @@
   margin: 1rem auto;
   text-align: center;
   border: solid 1px black;
-  padding: 1rem;
-}
-
-.container div, button {
-  margin: 1rem 0;
-}
+  padding: 1rem; }
+  .container div, .container button, .container input {
+    margin: .5rem 0; }

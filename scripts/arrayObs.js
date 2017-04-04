@@ -65,6 +65,7 @@ define(['helper'], ({ kob }) => {
   arrayVM.load();
 
 
-  return { arrayVM };
+  // Export arrayVM
+  return arrayVM;
 
 });
