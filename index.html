@@ -2,52 +2,49 @@
 <html>
 <head>
 <meta charset="utf-8">
+  <link href="styles/materialize.css" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- observable  -->
-  <!-- <div class="container">
-    <div>One way data binding</div>
-    <div data-bind="text:firstName"></div>
-    <div data-bind="text:lastName"></div>
-    <div data-bind="text:fullName(firstName, lastName)"></div>
-  </div> -->
-
-  <!-- <div class="container">
-    <div>Two way data binding with observables</div>
-    <input data-bind="value:firstName, valueUpdate:'afterkeydown'" />
-    <div data-bind="text:firstName"></div>
-  </div> -->
-
-  <!-- <div class="container">
-    <div>Two way data binding with computed observables</div>
-    <input data-bind="value:firstName, valueUpdate:'afterkeydown'" />
-    <input data-bind="value:lastName, valueUpdate:'afterkeydown'" />
-    <input data-bind="value:fullName, valueUpdate:'afterkeydown'" />
-  </div> -->
+  <nav class="nav my-blue">
+    <div class="nav-wrapper">
+      <ul class="right">
+        <li><a href="/">Objects</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+      </ul>
+    </div>
+  </nav>
 
 
-  <!--  Observable Arrays  -->
-  <div class="container">
-    <div data-bind="text:`Total products: ${products().length}`"></div>
-    <select data-bind="options:products, selectedOptions:selectedProducts, optionsText:'description'" multiple="true"></select>
-    <button data-bind="click:removeSelected, enable:productsAreSelected">
-      Remove
-    </button>
-    <button data-bind="click:sortProducts, enable:productsExist">
-      Sort
-    </button>
-    <div>Add item:</div>
-    <input type="text" data-bind="value:itemToAdd, valueUpdate:'afterkeydown'" />
-    <button data-bind="click:addItem, enable:itemToAdd().length > 0">Add</button>
+  <!-- observable objects -->
+  <div class="parent-container-objects">
+    <div class="container-main">
+      <h5>One way data binding</h5>
+      <div data-bind="text:myComputed.firstName"></div>
+      <div data-bind="text:myComputed.lastName"></div>
+      <div data-bind="text:myComputed.fullName(myComputed.firstName, myComputed.lastName)"></div>
+    </div>
+
+    <div class="container-main">
+      <h5>Two way data binding with observables</h5>
+      <input data-bind="value:myComputed.firstName, valueUpdate:'afterkeydown'" />
+      <div data-bind="text:myComputed.firstName"></div>
+    </div>
+
+    <div class="container-main">
+      <h5>Two way data binding with computed observables</h5>
+      <input data-bind="value:myComputed.firstName, valueUpdate:'afterkeydown'" />
+      <input data-bind="value:myComputed.lastName, valueUpdate:'afterkeydown'" />
+      <input data-bind="value:myComputed.fullNameComputed, valueUpdate:'afterkeydown'" />
+    </div>
   </div>
 
 
-  <!-- <script src="bower_components/knockout/dist/knockout.js"></script> -->
-  <script src="node_modules/knockout/build/output/knockout-latest.js"></script>
-  <script src="main.js"></script>
-  <script src="arrayObs.js"></script>
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.js"></script>
+  <script data-main="scripts/main.js" src="scripts/require.js"></script>
 </body>
 </html>
