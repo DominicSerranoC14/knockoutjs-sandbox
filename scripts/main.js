@@ -1,20 +1,20 @@
 'use strict';
 
 
-require(['objectObs', 'arrayObs', 'subs'],
+require(['objectObs', 'arrayObs', 'subs', 'control'],
 
-  (objects, array, subs) => {
-
+  (objects, array, subs, control) => {
   // Use promise.all to load all vm's
   Promise.all([
-    objects, array, subs()
+    objects, array, subs(), control
   ])
-  .then(([object, array, subs]) => (
+  .then(([object, array, subs, control]) => (
     // Apply view models to the view
     ko.applyBindings({
       objects,
       array,
-      subs
+      subs,
+      control
     })
   ))
   .catch(console.error);
