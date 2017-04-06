@@ -8212,5 +8212,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .container-main select {
     display: inline-block;
     height: 10rem; }
-  .container-main h4 {
+  .container-main .small-select {
+    height: auto; }
+  .container-main h5 {
     text-shadow: 1px 1px 2px black; }

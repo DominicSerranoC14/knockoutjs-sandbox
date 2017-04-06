@@ -12,6 +12,7 @@
       <ul class="right">
         <li><a href="/">Objects</a></li>
         <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/subs.html">Subs</a></li>
       </ul>
     </div>
   </nav>
@@ -19,17 +20,17 @@
 
   <!--  Observable Arrays  -->
   <div class="container-main">
-    <h5 data-bind="text:`Total products: ${arrayVM.products().length}`"></h5>
-    <select data-bind="options:arrayVM.products, selectedOptions:arrayVM.selectedProducts, optionsText:'description'" multiple="true"></select>
-    <button class="btn" data-bind="click:arrayVM.removeSelected, enable:arrayVM.productsAreSelected">
+    <h5 data-bind="text:`Total products: ${array.products().length}`"></h5>
+    <select data-bind="options:array.products, selectedOptions:array.selectedProducts, optionsText:'description'" multiple="true"></select>
+    <button class="btn" data-bind="click:array.removeSelected, enable:array.productsAreSelected">
       Remove
     </button>
-    <button class="btn" data-bind="click:arrayVM.sortProducts, enable:arrayVM.productsExist">
+    <button class="btn" data-bind="click:array.sortProducts, enable:array.productsExist">
       Sort
     </button>
     <div>Add item:</div>
-    <input type="text" data-bind="value:arrayVM.itemToAdd, valueUpdate:'afterkeydown'" />
-    <button class="btn" data-bind="click:arrayVM.addItem, enable:arrayVM.itemToAdd().length > 0">Add</button>
+    <input type="text" data-bind="value:array.itemToAdd, valueUpdate:'afterkeydown'" />
+    <button class="btn" data-bind="click:array.addItem, enable:array.itemToAdd().length > 0">Add</button>
   </div>
 
 

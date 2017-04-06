@@ -20,16 +20,20 @@
   <div class="container-main">
     <label>Make</label>
     <select class="small-select"
-    data-bind="options:subs.make">
+    data-bind="options:subs.make, selectedOptions:subs.selectedMake">
     </select>
     <label>Model</label>
     <select class="small-select"
-    data-bind="options:subs.model">
+    data-bind="options:subs.model, selectedOptions:subs.selectedModel">
     </select>
     <label>Car</label>
     <select class="small-select"
-    data-bind="options:subs.car">
+    data-bind="options:subs.car, selectedOptions:subs.selectedCar">
     </select>
+
+    <p data-bind="text:subs.selectedMake"></p>
+    <p data-bind="text:subs.selectedModel"></p>
+    <p data-bind="text:subs.selectedCar"></p>
   </div>
 
   <script src="bower_components/knockout/dist/knockout.js"></script>
