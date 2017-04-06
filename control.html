@@ -24,13 +24,11 @@
     data-bind="foreach:{ data: controlList, as: 'each' }">
       <ul class="container-main-row" data-bind="css: { 'my-blue': $parent.selected() === $data}">
         <button class="btn indigo" data-bind="click:$parent.selectItem">Click me</button>
-        <ul>
-          <li>Name:
-            <li data-bind="text:each.name"></li>
-          </li>
-          <li>Age:
-            <li data-bind="text:each.age"></li>
-          </li>
+        <ul>Name:
+          <li data-bind="text:each.name"></li>
+        </ul>
+        <ul>Age:
+          <li data-bind="text:each.age"></li>
         </ul>
         <li>Likes:
           <ul data-bind="foreach: {data: each.likes, as: 'like'}">

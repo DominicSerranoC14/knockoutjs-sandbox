@@ -19,25 +19,25 @@
 
 
   <!-- observable objects -->
-  <div class="parent-container-objects">
+  <div class="parent-container-objects" data-bind="with: objects">
     <div class="container-main">
       <h5>One way data binding</h5>
-      <div data-bind="text:objects.firstName"></div>
-      <div data-bind="text:objects.lastName"></div>
-      <div data-bind="text:objects.fullName(objects.firstName, objects.lastName)"></div>
+      <div data-bind="text:firstName"></div>
+      <div data-bind="text:lastName"></div>
+      <div data-bind="text:fullName(firstName, lastName)"></div>
     </div>
 
     <div class="container-main">
       <h5>Two way data binding with observables</h5>
-      <input data-bind="value:objects.firstName, valueUpdate:'afterkeydown'" />
-      <div data-bind="text:objects.firstName"></div>
+      <input data-bind="value:firstName, valueUpdate:'afterkeydown'" />
+      <div data-bind="text:firstName"></div>
     </div>
 
     <div class="container-main">
       <h5>Two way data binding with computed observables</h5>
-      <input data-bind="value:objects.firstName, valueUpdate:'afterkeydown'" />
-      <input data-bind="value:objects.lastName, valueUpdate:'afterkeydown'" />
-      <input data-bind="value:objects.fullNameComputed, valueUpdate:'afterkeydown'" />
+      <input data-bind="value:firstName, valueUpdate:'afterkeydown'" />
+      <input data-bind="value:lastName, valueUpdate:'afterkeydown'" />
+      <input data-bind="value:fullNameComputed, valueUpdate:'afterkeydown'" />
     </div>
   </div>
 
