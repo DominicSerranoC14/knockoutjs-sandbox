@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav my-blue">
+    <div class="nav-wrapper">
+      <ul class="right">
+        <li><a href="/">Objects</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/subs.html">Subs</a></li>
+        <li><a href="/control.html">Control</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h5 class="center">Nested content with a data-bind foreach</h5>
+  <div class="parent-container-objects"
+  data-bind="foreach:{ data: control, as: 'each' }">
+    <div class="container-main">
+      <p data-bind="text:each.name"></p>
+      <p data-bind="text:each.age"></p>
+      <ul data-bind="foreach: {data: each.likes, as: 'like'}">
+        <li data-bind="text:like"></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.js"></script>
+  <script data-main="scripts/main.js" src="scripts/require.js"></script>
+</body>
+</html>
