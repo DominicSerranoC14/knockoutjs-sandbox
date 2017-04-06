@@ -1,12 +1,21 @@
 'use strict';
 
 
-require(['objectObs', 'arrayObs'], (myComputed, arrayVM) => {
+require(['objectObs', 'arrayObs', 'subs'],
 
-  // Apply view model to the view
-  ko.applyBindings({
-    myComputed,
-    arrayVM
-  });
+  (objects, array, subs) => {
+
+  Promise.all([
+    objects, array, subs()
+  ])
+  .then(([object, array, subs]) => (
+    // Apply view model to the view
+    ko.applyBindings({
+      objects,
+      array,
+      subs
+    })
+  ))
+  .catch(console.error);
 
 });
