@@ -26,7 +26,7 @@ define(['helper'], ({ kob }) => {
 
   // Created a writeable computed that listens to each observable obj and concats
   // Both firstName and lastName on keypress
-  myComputed.fullNameComputed = ko.computed(function() {
+  myComputed.fullNameComputed = ko.computed(() => {
     return `${myComputed.firstName()} ${myComputed.lastName()}`;
   });
 

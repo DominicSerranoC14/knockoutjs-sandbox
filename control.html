@@ -18,14 +18,25 @@
     </div>
   </nav>
 
-  <h5 class="center">Nested content with a data-bind foreach</h5>
-  <div class="parent-container-objects"
-  data-bind="foreach:{ data: control, as: 'each' }">
-    <div class="container-main">
-      <p data-bind="text:each.name"></p>
-      <p data-bind="text:each.age"></p>
-      <ul data-bind="foreach: {data: each.likes, as: 'like'}">
-        <li data-bind="text:like"></li>
+  <div data-bind="with: control">
+    <h5 class="center">Nested content with a data-bind foreach</h5>
+    <div class="parent-container-objects"
+    data-bind="foreach:{ data: controlList, as: 'each' }">
+      <ul class="container-main-row" data-bind="css: { 'my-blue': $parent.selected() === $data}">
+        <button class="btn indigo" data-bind="click:$parent.selectItem">Click me</button>
+        <ul>
+          <li>Name:
+            <li data-bind="text:each.name"></li>
+          </li>
+          <li>Age:
+            <li data-bind="text:each.age"></li>
+          </li>
+        </ul>
+        <li>Likes:
+          <ul data-bind="foreach: {data: each.likes, as: 'like'}">
+            <li data-bind="text:like"></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

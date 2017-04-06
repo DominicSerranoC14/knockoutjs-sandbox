@@ -9,6 +9,15 @@ define(['helper'], ({kob}) => {
     { name: 'Risha', age: 22, likes: ['soccer', 'fishing', 'cats']}
   ];
 
-  return controlList;
+  const controlVM = {
+    selected: kob(),
+    selectItem: (item) => {
+      controlVM.selected(item);
+    },
+    controlList
+  };
+
+
+  return controlVM;
 
 });

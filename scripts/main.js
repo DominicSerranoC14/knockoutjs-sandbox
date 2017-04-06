@@ -2,8 +2,8 @@
 
 
 require(['objectObs', 'arrayObs', 'subs', 'control'],
-
   (objects, array, subs, control) => {
+    console.log("control", control);
   // Use promise.all to load all vm's
   Promise.all([
     objects, array, subs(), control
