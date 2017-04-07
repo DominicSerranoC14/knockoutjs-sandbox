@@ -1,0 +1,14 @@
+<!--  Observable Arrays  -->
+<div class="container-main">
+  <h5 data-bind="text:`Total products: ${products().length}`"></h5>
+  <select data-bind="options:products, selectedOptions:selectedProducts, optionsText:'description'" multiple="true"></select>
+  <button class="btn" data-bind="click:removeSelected, enable:productsAreSelected">
+    Remove
+  </button>
+  <button class="btn" data-bind="click:sortProducts, enable:productsExist">
+    Sort
+  </button>
+  <div>Add item:</div>
+  <input type="text" data-bind="value:itemToAdd, valueUpdate:'afterkeydown'" />
+  <button class="btn" data-bind="click:addItem, enable:itemToAdd().length > 0">Add</button>
+</div>

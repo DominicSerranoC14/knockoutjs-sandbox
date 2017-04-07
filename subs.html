@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav my-blue">
+    <div class="nav-wrapper">
+      <ul class="right">
+        <li><a href="/">Objects</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/subs.html">Subs</a></li>
+        <li><a href="/control.html">Control</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-main" data-bind="with: subs">
+    <label>Make</label>
+    <select class="small-select"
+    data-bind="options:make, selectedOptions:selectedMake">
+    </select>
+    <label>Model</label>
+    <select class="small-select"
+    data-bind="options:model, selectedOptions:selectedModel">
+    </select>
+    <label>Car</label>
+    <select class="small-select"
+    data-bind="options:car, selectedOptions:selectedCar">
+    </select>
+
+    <p data-bind="text:selectedMake"></p>
+    <p data-bind="text:selectedModel"></p>
+    <p data-bind="text:selectedCar"></p>
+  </div>
+
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.js"></script>
+  <script data-main="scripts/main.js" src="scripts/require.js"></script>
+</body>
+</html>

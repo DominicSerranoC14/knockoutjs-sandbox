@@ -1,0 +1,18 @@
+<div class="container-main">
+  <label>Make</label>
+  <select class="small-select"
+  data-bind="options:make, selectedOptions:selectedMake">
+  </select>
+  <label>Model</label>
+  <select class="small-select"
+  data-bind="options:model, selectedOptions:selectedModel">
+  </select>
+  <label>Car</label>
+  <select class="small-select"
+  data-bind="options:car, selectedOptions:selectedCar">
+  </select>
+
+  <p data-bind="text:selectedMake"></p>
+  <p data-bind="text:selectedModel"></p>
+  <p data-bind="text:selectedCar"></p>
+</div>

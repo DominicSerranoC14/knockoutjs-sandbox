@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <link href="styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="nav my-blue">
+    <div class="nav-wrapper">
+      <ul class="right">
+        <li><a href="/">Objects</a></li>
+        <li><a href="/arrays.html">Arrays</a></li>
+        <li><a href="/subs.html">Subs</a></li>
+        <li><a href="/control.html">Control</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div data-bind="with: control">
+    <h5 class="center">Nested content with a data-bind foreach</h5>
+    <div class="parent-container-objects"
+    data-bind="foreach:{ data: controlList, as: 'each' }">
+      <ul class="container-main-row" data-bind="css: { 'my-blue': $parent.selected() === $data}">
+        <button class="btn indigo" data-bind="click:$parent.selectItem">Click me</button>
+        <ul>Name:
+          <li data-bind="text:each.name"></li>
+        </ul>
+        <ul>Age:
+          <li data-bind="text:each.age"></li>
+        </ul>
+        <li>Likes:
+          <ul data-bind="foreach: {data: each.likes, as: 'like'}">
+            <li data-bind="text:like"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/materialize/dist/js/materialize.js"></script>
+  <script data-main="scripts/main.js" src="scripts/require.js"></script>
+</body>
+</html>
